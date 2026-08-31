@@ -1,6 +1,6 @@
 body { /* Stil för hela sidan, bestämmer här bakgrundsfärgen */
     background-color: deeppink;
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg");
+    background-image: url("https://img1.picmix.com/output/stamp/thumb/5/4/3/9/2429345_b119c.gif");
     background-position: center;
 }
 
@@ -35,7 +35,8 @@ p,a { /* Textens utseende (p = paragraph) */
 }
 
 a {
-    border: rgb(112 87 61 / 0.63) solid 0px;
+    border: rgb(112 87 61 / 0) solid 0px;
+    color: lightblue;
 }
 
 
