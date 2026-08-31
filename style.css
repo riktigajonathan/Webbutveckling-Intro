@@ -1,32 +1,46 @@
 body { /* Stil för hela sidan, bestämmer här bakgrundsfärgen */
-    background-color: slategray;
+    background-color: deeppink;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg");
+    background-position: center;
 }
 
 
 main { /* "Boxen" som innehållet ligger i, bestämmer här bredden */
-    width: 50%;
+    width: 80%;
     margin: 100px auto; /* Centrerar */
 }
 
 
-h1 { /* Rubrikens utseende (h1 = heading 1) */
-    font-size: 24pt;
-    color: #333;
+h1, h2 { /* Rubrikens utseende (h1 = heading 1) */
+    font-size: 24px;
+    color: white;
     text-align: center;
     font-style: italic;
+    outline-style: double;
+    border-width: 100px;
+    width : 70%;
+    margin: auto;
+    background-color: rgb(13 46 0 / 0.74);
 }
 
-
-p { /* Textens utseende (p = paragraph) */
+p,a { /* Textens utseende (p = paragraph) */
+    font-size: 24px;
     font-family: sans-serif;
     color: white;
     line-height: 150%;
+    border: black solid 1px;
     text-align: justify; /* Rak högerkant */
+    background-color: rgb(76 61 43 / 0.63);
+    text-shadow: deeppink 0px 0px 4px;
+}
+
+a {
+    border: rgb(112 87 61 / 0.63) solid 0px;
 }
 
 
 img { /* Bildens utseende (img = image) */
-    width: 100%;
+    width: 500px;
     margin: 30px auto;
     border: 5px solid #333;
     display: block;
