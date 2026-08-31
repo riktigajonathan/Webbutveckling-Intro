@@ -1,0 +1,55 @@
+body { /* Stil för hela sidan, bestämmer här bakgrundsfärgen */
+    background-color: slategray;
+}
+
+
+main { /* "Boxen" som innehållet ligger i, bestämmer här bredden */
+    width: 50%;
+    margin: 100px auto; /* Centrerar */
+}
+
+
+h1 { /* Rubrikens utseende (h1 = heading 1) */
+    font-size: 24pt;
+    color: #333;
+    text-align: center;
+    font-style: italic;
+}
+
+
+p { /* Textens utseende (p = paragraph) */
+    font-family: sans-serif;
+    color: white;
+    line-height: 150%;
+    text-align: justify; /* Rak högerkant */
+}
+
+
+img { /* Bildens utseende (img = image) */
+    width: 100%;
+    margin: 30px auto;
+    border: 5px solid #333;
+    display: block;
+}
+
+
+
+
+
+
+/*
+TIPS: https://www.w3schools.com/css/
+
+
+Exempelvis (inkl. underrubriker):
+CSS Backgrounds   https://www.w3schools.com/css/css_background.asp
+CSS Borders       https://www.w3schools.com/css/css_border.asp
+CSS Text          https://www.w3schools.com/css/css_text.asp
+CSS Fonts         https://www.w3schools.com/css/css_font.asp
+CSS Links         https://www.w3schools.com/css/css_link.asp
+CSS Max-width     https://www.w3schools.com/css/css_max-width.asp
+CSS Margins       https://www.w3schools.com/css/css_margin.asp
+CSS Padding       https://www.w3schools.com/css/css_padding.asp
+*/
+
+
