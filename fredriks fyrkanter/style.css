@@ -1,3 +1,37 @@
-#grön {
+div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transition: all 500ms ease-in-out;
+}
 
+#grön {
+    background: darkgreen;
+    margin: 200px 200px;
+    clip-path: circle(100%);
+}
+
+#grön:hover {
+    background: lightgreen;
+    clip-path: circle(50%);
+    z-index: 2;
+}
+
+#röd {
+    background: red;
+    margin: 300px 300px;
+    z-index: 1;
+}
+
+#röd:hover {
+    transform: rotate(45deg);
+}
+
+#blå {
+    background: blue;
+    margin: 400px 400px;
+}
+
+#blå:hover {
+    background: rgba(0,0,0,0%);
 }
