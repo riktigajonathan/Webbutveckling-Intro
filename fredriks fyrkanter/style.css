@@ -2,19 +2,35 @@ div {
     width: 200px;
     height: 200px;
     position: absolute;
-    transition: all 500ms ease-in-out;
+    transition: all 300ms;
 }
 
 #grön {
     background: darkgreen;
     margin: 200px 200px;
-    clip-path: circle(100%);
+    clip-path: circle(100%)
 }
 
 #grön:hover {
     background: lightgreen;
     clip-path: circle(50%);
-    z-index: 2;
+    z-index: 0;
+}
+
+#grönröd {
+    background: darkgreen;
+    margin: 200px 200px;
+    clip-path: circle(100%);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#grön:hover ~ #grönröd {
+    background: lightgreen;
+    clip-path: circle(50%);
+    z-index: 4;
+    opacity: 100%;
 }
 
 #röd {
