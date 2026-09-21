@@ -1,0 +1,101 @@
+body {
+    background-color: black;
+    height:100vh;
+    max-width: 600px;
+    background-image: url("https://images.unsplash.com/photo-1554797589-7241bb691973");
+    background-size: cover;
+    margin: auto;
+    padding: 0;
+    color:white;
+    transition: all 0.5s ease-in-out;
+
+}
+
+main{
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Bandloggan */
+header{
+    background-image: url(./logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 20vw;
+    padding-top: 5vw;
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+}
+
+/* Menyn */
+nav {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+    height:60px;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+nav ul{
+    padding: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-family: AlbumFont;
+    letter-spacing: 3px;
+
+}
+
+/* Bilden i mitten */
+article .latest_album {
+    background-image: url("./album.png");
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    margin:auto;
+
+    overflow: hidden;
+
+    border: 7px solid black;
+}
+
+.spotify {
+    width: 520px;
+    margin:80px 0 0;
+    height:300px;
+}
+
+footer p {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    text-align: center;
+    width: 100%;
+    color: #80884d;
+}
+
+/* Menyknapparna */
+a, a:hover, a:active, a:visited {
+    color: #ffffff;
+    background-color: rgb(13 34 44 / 0.68);
+    text-decoration: none;
+    padding:20px 40px;
+    margin: 0;
+    border-radius: 15px;
+}
+
+a:hover {
+    background-color: #132b35;
+
+    color:yellow;
+}
+
+@font-face {
+    font-family: "AlbumFont";
+    src: url("font.ttf") format("truetype");
+}
