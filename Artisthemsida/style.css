@@ -54,6 +54,11 @@ nav ul li {
     font-family: AlbumFont;
     letter-spacing: 3px;
     margin-bottom: 50px;
+    img {
+        filter: brightness(0) invert(1);
+        max-width: 1.3%;
+        position: absolute;
+    }
 }
 
 /* Bilden i mitten */
@@ -98,7 +103,9 @@ a:hover, .current {
     background-color: rgb(19 43 53 / 0.81);
 
     color:yellow;
-
+    img {
+        filter: brightness(0) saturate(100%) invert(92%) sepia(74%) saturate(1307%) hue-rotate(357deg) brightness(110%) contrast(103%);
+    }
 }
 
 .current {
