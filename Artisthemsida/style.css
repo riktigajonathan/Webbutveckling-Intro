@@ -1,16 +1,24 @@
 body {
     background-color: black;
     height:100vh;
-    max-width: 600px;
-    background-image: url("https://images.unsplash.com/photo-1554797589-7241bb691973");
-    background-size: cover;
+    max-width: 900px;
     margin: auto;
     padding: 0;
     color:white;
     background-attachment: fixed;
+
+    background-image:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(255, 255, 255, 0.27) 100%),
+            url("https://images.unsplash.com/photo-1554797589-7241bb691973");
+    background-size: cover;
+
 }
 
-main{
+.index {
+
+}
+
+main {
     text-align: center;
     margin: 0 auto;
 }
@@ -21,11 +29,10 @@ header{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 20vw;
-    padding-top: 5vw;
-    margin-top: 20px;
-    margin-bottom: 35px;
-
+    min-height: 70px;
+    padding-top: 5px;
+    margin: 40px;
+    margin-bottom: 80px;
 }
 
 /* Menyn */
@@ -33,7 +40,6 @@ nav {
     font-family: sans-serif;
     font-weight: 100;
     font-size: 1.5em;
-    height:60px;
     text-transform: uppercase;
     list-style-type: none;
 }
@@ -47,7 +53,7 @@ nav ul li {
     display: inline-block;
     font-family: AlbumFont;
     letter-spacing: 3px;
-
+    margin-bottom: 50px;
 }
 
 /* Bilden i mitten */
@@ -56,10 +62,9 @@ article .latest_album {
     background-size: cover;
     width: 500px;
     height: 500px;
-    margin:auto;
-
+    margin: auto;
     overflow: hidden;
-
+    margin-top: -20px;
     border: 7px solid black;
 }
 
@@ -69,32 +74,67 @@ article .latest_album {
     height:300px;
 }
 
-footer p {
+footer {
     position: fixed;
     bottom: 0;
     left:0;
     text-align: center;
     width: 100%;
-    color: #80884d;
+    color: rgb(255 222 0);
+    background: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0 / 0) 100%);
 }
 
 /* Menyknapparna */
 a, a:hover, a:active, a:visited {
     color: #ffffff;
-    background-color: rgb(13 34 44 / 0.68);
+    background-color: rgb(13 34 44 / 0.44);
     text-decoration: none;
     padding:20px 40px;
-    margin: 0;
     border-radius: 15px;
+    mix-blend-mode: normal;
 }
 
-a:hover {
-    background-color: #132b35;
+a:hover, .current {
+    background-color: rgb(19 43 53 / 0.81);
 
     color:yellow;
+
+}
+
+.current {
+    mix-blend-mode: darken;
 }
 
 @font-face {
     font-family: "AlbumFont";
     src: url("font.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Superbold";
+    src: url("superbold.ttf") format("truetype");
+}
+
+p, h1 {
+    font-weight: 900;
+    font-family: "Arial", sans-serif;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #fff29f;
+    margin: 0px 20%;
+    background-color: rgb(0 0 0 / 0.49);
+    border: 1px solid rgb(255 255 255 / 0.44);
+    mix-blend-mode: hard-light;
+}
+
+h1 {
+    font-family: "Superbold";
+    font-size: 1.6rem;
+    letter-spacing: 0px;
+    color: rgb(55 47 31);
+    background-color: rgb(248 220 5);
+    margin: 20px 40%;
+    border: 3px solid rgb(0 0 0 / 0.84);
 }
