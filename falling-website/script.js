@@ -20,42 +20,45 @@ function draw() {
         let body = rigidbody.bodies[i];
 
         body.update();
-        for (let j = i+1; j < rigidbody.bodies.length; j++) {
+        for (let j = i + 1; j < rigidbody.bodies.length; j++) {
             let otherBody = rigidbody.bodies[j];
 
-            let dx = (otherBody.x-body.x);
-            let dy = (otherBody.y-body.y);
+            let dx = otherBody.x - body.x;
+            let dy = otherBody.y - body.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            let minDistance = body.diameter / 2 + otherBody.diameter / 2;
 
-            if (Math.sqrt(dx*dx+dy*dy) <= body.diameter/2 + otherBody.diameter/2) {
-                console.log("cling!");
-
-                let distance = Math.sqrt(dx * dx + dy * dy) || 1;
-                let nx = dx / distance;
-                let ny = dy / distance;
-
-                let kx = body.vx - otherBody.vx;
-                let ky = body.vy - otherBody.vy;
-
-                let p = 2 * (nx * kx + ny * ky) / 2;
-
-                body.vx -= p * nx * body.bouncyness;
-                body.vy -= p * ny * body.bouncyness;
-                otherBody.vx += p * nx * otherBody.bouncyness;
-                otherBody.vy += p * ny * otherBody.bouncyness;
-
-                otherBody.vx = -body.vx;
-                otherBody.vy = -body.vy;
-
-                let minDistance = body.diameter / 2 + otherBody.diameter / 2;
-                let overlap = minDistance - distance;
+            if (distance < minDistance) {
+                let overlap = minDistance - (distance || 1);
+                let nx = distance ? dx / distance : 1;
+                let ny = distance ? dy / distance : 0;
 
                 body.x -= nx * overlap * 0.5;
                 body.y -= ny * overlap * 0.5;
                 otherBody.x += nx * overlap * 0.5;
                 otherBody.y += ny * overlap * 0.5;
+
+                let kx = body.vx - otherBody.vx;
+                let ky = body.vy - otherBody.vy;
+                let velAlongNormal = kx * nx + ky * ny;
+
+                if (velAlongNormal > 0) {
+                    let restitution = (body.bouncyness + otherBody.bouncyness) * 0.5;
+                    let impulse = (1 + restitution) * velAlongNormal * 0.5;
+
+                    body.vx -= impulse * nx;
+                    body.vy -= impulse * ny;
+                    otherBody.vx += impulse * nx;
+                    otherBody.vy += impulse * ny;
+                }
             }
         }
 
+        if (body.color == 1) {
+            body.color = color(random(0,255),random(0,255),random(0,255))
+        }
+
+        fill(body.color);
         circle(body.x, body.y, body.diameter);
 
         if (body.hasOwnProperty('text'))
@@ -66,13 +69,14 @@ function draw() {
 
             body.rotation += (2 * body.vx) / body.diameter;
 
+            fill(color(255,255,255))
             rotate(body.rotation);
             text(body.text, 0, 0);
             pop();
         }
     }
 
-
+    fill(color(0,0,0))
     rect(0,groundY,width,1)
     textSize(20);
     text("© Copyright 2026", width/2, groundY+20);
@@ -108,11 +112,13 @@ class rigidbody {
     grabbable = true;
     held = false;
     rotation = 0;
+    color = 1;
 
     constructor(x, y, diameter = 10) {
         this.diameter = diameter;
         this.x = x;
         this.y = y;
+
         rigidbody.bodies.push(this);
     }
 
@@ -170,5 +176,43 @@ class letter extends rigidbody {
     }
 }
 
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
+new letter("a",100, 100, 100);
+new letter("b",160, 120, 100);
 new letter("a",100, 100, 100);
 new letter("b",160, 120, 100);
