@@ -53,7 +53,12 @@ let letter_spacing = 40;
 let line_spacing = 80;
 
 let yScroll = 0;
+let disableScroll = false;
 function mouseWheel(event) {
+    if (disableScroll) {
+        return false;
+    }
+
     yScroll -= event.delta * 0.2;
     if (yScroll >= 0) {
         yScroll = 0;
@@ -138,7 +143,7 @@ function draw() {
             textSize(body.diameter)
             push();
             translate(body.x, body.y);
-            fill(color(0,0,0))
+            fill(color(0,0,0,(Math.min(frameCount*2, 255)) - (Math.min(frameCount*2, 255)/255)*(body.y-height*0.8)/(height/6)*255));
             rotate(body.rotation);
             text(body.text, 0, 0);
             pop();
@@ -160,6 +165,7 @@ function draw() {
         rigidbody.bodies[0].glued = false;
         rigidbody.bodies[0].indestructible = true;
         rigidbody.bodies[0].vx = 0;
+        disableScroll = true;
     }
 
     wasPressedLastFrame = mouseIsPressed;
