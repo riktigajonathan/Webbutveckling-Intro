@@ -5,6 +5,7 @@ function setup() {
     document.getElementsByTagName("BODY")[0].onresize = function() {fixResize()};
     createCanvas(width, height);
     textAlign(CENTER, CENTER);
+    textFont('JetBrains Mono', 'sans-serif');
 }
 
 let header = "Detta är min hemsida";
@@ -123,10 +124,12 @@ class rigidbody {
     }
 
     update() {
+
+
         this.vy += this.gravity;
 
         this.vx *= this.airResistance;
-        this.vx *= this.airResistance;
+        this.vy *= this.airResistance;
 
         this.x += this.vx;
         this.y += this.vy;
