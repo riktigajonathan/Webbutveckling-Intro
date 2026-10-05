@@ -16,6 +16,7 @@ function setup() {
     let endX = width * (1 - margin);
 
     let x = startX;
+    let y = 40;
 
     let words = string.split(' ');
 
@@ -28,6 +29,7 @@ function setup() {
             x = startX;
             y += line_spacing;
         }
+
         for (let j = 0; j < word.length; j++) {
             new letter(word.charAt(j), x, y, 70);
             x += letter_spacing;
@@ -153,6 +155,13 @@ function draw() {
 
     rigidbody.bodies = rigidbody.bodies.filter(body => !body.destroyed);
 
+    if (rigidbody.bodies.length == 0) {
+        new letter("Reload the website to destroy it again", width/2, 0, 70)
+        rigidbody.bodies[0].glued = false;
+        rigidbody.bodies[0].indestructible = true;
+        rigidbody.bodies[0].vx = 0;
+    }
+
     wasPressedLastFrame = mouseIsPressed;
 }
 
@@ -182,6 +191,7 @@ class rigidbody {
     grabbable = true;
     held = false;
     glued = true;
+    indestructible = false;
 
     rotation = 0;
     color = 1;
@@ -201,7 +211,9 @@ class rigidbody {
             return;
         }
 
-        this.rotation += (2 * this.vx) / this.diameter;
+        if (!this.indestructible) {
+            this.rotation += (2 * this.vx) / this.diameter;
+        }
 
         this.vy += this.gravity;
 
@@ -213,12 +225,10 @@ class rigidbody {
 
         let radius = this.diameter / 2;
 
-        /*
-        if (this.y + radius >= groundY) {
-            this.y = groundY - radius;
+        if (this.indestructible && this.y + radius >=  height/2) {
+            this.y =  height/2 - radius;
             this.vy = -this.vy  * this.bouncyness;
         }
-        */
 
         if (this.x + radius >= width) {
             this.x = width - radius;
@@ -231,7 +241,7 @@ class rigidbody {
 
         let dx = this.x - mouseX;
         let dy = this.y - mouseY;
-        if (Math.sqrt(dx * dx + dy * dy) <= this.diameter / 2 && mouseJustPressed) {
+        if (Math.sqrt(dx * dx + dy * dy) <= this.diameter / 2 && mouseJustPressed && !this.indestructible) {
             console.log("you got me");
             this.held = true;
         }
@@ -247,7 +257,7 @@ class rigidbody {
             this.y = mouseY;
         }
 
-        if (this.y+this.diameter/2 >= groundY) {
+        if (this.y+this.diameter/2 >= groundY && !this.indestructible) {
             this.destroyed = true;
         }
     }
