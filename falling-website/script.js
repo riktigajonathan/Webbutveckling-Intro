@@ -16,7 +16,7 @@ function setup() {
     let endX = width * (1 - margin);
 
     let x = startX;
-    let y = 40;
+    let y = 180;
 
     let words = string.split(' ');
 
@@ -55,8 +55,8 @@ let line_spacing = 80;
 let yScroll = 0;
 function mouseWheel(event) {
     yScroll -= event.delta * 0.2;
-    if (yScroll >= 90) {
-        yScroll = 90;
+    if (yScroll >= 0) {
+        yScroll = 0;
         return false;
     }
 
