@@ -98,7 +98,7 @@ class rigidbody {
     vx = 20;
     vy = 0;
 
-    bouncyness = 0.9;
+    bouncyness = 0.8;
     airResistance = 0.999;
     gravity = 0.5;
 
@@ -125,7 +125,7 @@ class rigidbody {
 
         if (this.y + radius >= groundY) {
             this.y = groundY - radius;
-            this.vy = -this.vy * this.bouncyness;
+            this.vy = -this.vy  * this.bouncyness;
         }
 
         if (this.x + radius >= width) {
@@ -149,8 +149,8 @@ class rigidbody {
         }
 
         if (this.held) {
-            this.vx = mouseX - pmouseX;
-            this.vy = mouseY - pmouseY;
+            this.vx = (mouseX - pmouseX)*0.3;
+            this.vy = (mouseY - pmouseY)*0.3;
             this.x = mouseX;
             this.y = mouseY;
         }
