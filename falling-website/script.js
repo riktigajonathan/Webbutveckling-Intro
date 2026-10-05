@@ -63,7 +63,10 @@ function draw() {
             textSize(body.diameter)
             push();
             translate(body.x, body.y);
-            rotate(frameCount / 200);
+
+            body.rotation += (2 * body.vx) / body.diameter;
+
+            rotate(body.rotation);
             text(body.text, 0, 0);
             pop();
         }
@@ -104,6 +107,7 @@ class rigidbody {
 
     grabbable = true;
     held = false;
+    rotation = 0;
 
     constructor(x, y, diameter = 10) {
         this.diameter = diameter;
