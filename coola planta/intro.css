@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(11, 55, 14);
+    color: white
+    
+}
+
+p {
+    font-size: 29px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 60px;
+
+}
+
+h1 {
+    font-size: 70px;
+    font-family: 'Google Sans Flex';
+}
+
+img {
+    width: 30%;
+    position:relative;
+    margin-left: 35%;
+}

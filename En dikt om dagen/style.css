@@ -1,0 +1,30 @@
+p {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    text-align: justify;
+}
+
+main {
+    margin: auto;
+    width: 55%;
+}
+
+img {
+    width: 100%;
+    z-index: -1000;
+    position: relative;
+}
+
+h1 {
+    text-align: left;
+    font-size: 50px;
+    margin-bottom: -12px;
+    z-index: 1000;
+}
+
+.diktare {
+    width: 20%;
+    z-index: -1000;
+    position: relative;
+    border: black 3px solid;
+    float: right;
+}
