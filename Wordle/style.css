@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    height: 100vh;           /* Makes body take full screen height */
+    background: #000;
+    margin: 0;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;         /* Allows boxes to wrap/tile to the next line */
+    justify-content: center;
+    align-items: center;
+    background: #ff2525;
+    padding: 350px;
+    gap: 2px;               /* Creates space between your boxes easily */
+}
+
+.box {
+    display: flex;
+    background: #ffffff;
+    padding: 12px 12px;
+}
