@@ -1,3 +1,7 @@
+ :root{
+   --aside_background: rgb(0 0 0 / 0.76);
+ }
+
 /* ---< Påverkar hela sidan >--------- */
 body {
   margin:0;
@@ -8,6 +12,7 @@ body {
   background-size: cover;
   background-color: black;
   color: white;
+  backdrop-filter: blur(3px);
 
   font-family: "Jost", sans-serif;
 }
@@ -26,7 +31,7 @@ header {
 }
 
 nav {
-  background-color: rgb(0 0 0 / 0.83);
+  background-color: var(--aside_background);
   display: flex;
   flex: 100%;
   order: -4;
@@ -56,7 +61,7 @@ a {
 
 /* ---< MAIN >------------------------ */
 main {
-  background: lavender;
+  background: rgb(0 0 0 / 0.62);
   flex:6;
 }
 
@@ -70,7 +75,7 @@ main h2 {
 
 /* ---< ASIDES >---------------------- */
 aside {
-  background: rgb(0 0 0 / 0.7);
+  background: var(--aside_background);
 }
 
 aside h4 {
@@ -91,6 +96,7 @@ aside h4 {
 footer {
   background: rgb(27 27 27 / 0.91);
   flex: 100%;
+  align-self: flex-end;
 }
 
 span {
