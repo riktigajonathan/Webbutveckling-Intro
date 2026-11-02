@@ -95,11 +95,12 @@ aside h4 {
 /* ---< FOOTER >---------------------- */
 footer {
   background: rgb(27 27 27 / 0.91);
-  flex: 100%;
-  align-self: flex-end;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
-span {
+div {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
