@@ -1,0 +1,45 @@
+body {
+    background: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100svh;
+    overflow: hidden;
+
+    transition: background-color 300ms linear;
+}
+
+.mobile {
+    display: none;
+    color: #ffffff;
+    z-index: 0;
+}
+.pc {
+    display: block;
+    color: #000000;
+    z-index: 1;
+}
+
+@media (max-width: 480px) {
+    body {
+        background: #000000;
+    }
+    .mobile {
+        display: block;
+        color: #ffffff;
+        z-index: 1;
+    }
+    .pc {
+        display: none;
+        color: #000000;
+        z-index: 0;
+    }
+}
+
+h2 {
+    font: 100 2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    word-break: break-all;
+}
