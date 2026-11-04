@@ -4,6 +4,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
 
     min-height: 100svh;
     overflow: hidden;
@@ -28,18 +31,29 @@ body {
     }
     .mobile {
         display: block;
-        color: #ffffff;
         z-index: 1;
     }
     .pc {
         display: none;
-        color: #000000;
         z-index: 0;
+    }
+    p {
+        color: #ffffff;
     }
 }
 
-h2 {
-    font: 100 2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+h2, p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
     word-break: break-all;
+    flex: 100%;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1em;
+    color: #000000;
 }
